@@ -25,12 +25,26 @@ export default function Header() {
   return (
     <header className="bg-slate-200 shadow-md">
       <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
-        <Link to="/">
-          <h1 className="font-bold text-sm sm:text-xl flex flex-wrap">
-            <span className="text-slate-500">Real</span>
-            <span className="text-slate-700">Estate</span>
+        <Link
+          to="/"
+          className="flex items-center gap-3 hover:scale-105 transition duration-200"
+        >
+          <img
+            src="/logo.png"
+            alt="logo"
+            className="h-48 w-auto object-contain drop-shadow-md" // Increased height
+          />
+          <h1 className="font-bold text-xl sm:text-3xl flex flex-wrap">
+            <span className="bg-gradient-to-r from-orange-500 to-yellow-600 text-transparent bg-clip-text">
+              SiddhiVinayak
+            </span>
+            &nbsp;
+            <span className="bg-gradient-to-r from-orange-500 to-yellow-600 text-transparent bg-clip-text">
+              Construction
+            </span>
           </h1>
         </Link>
+
         <form
           onSubmit={handleSubmit}
           className="bg-slate-100 p-3 rounded-lg flex items-center"
