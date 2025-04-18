@@ -29,6 +29,9 @@ export default function Listing() {
     const fetchListing = async () => {
       try {
         setLoading(true);
+        const response = await fetch(
+          `${process.env.REACT_APP_API_URL}/api/listing/get/${params.listingId}`
+        );
         const res = await fetch(`/api/listing/get/${params.listingId}`);
         const data = await res.json();
         if (data.success === false) {
