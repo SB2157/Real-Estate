@@ -44,7 +44,7 @@ app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/listing", listingRouter);
 
-// Serve static files
+// Serve static files from React (or other frontend) build
 app.use(express.static(path.join(__dirname, "client", "dist")));
 
 app.get("*", (req, res) => {
@@ -62,12 +62,8 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Start Server
+// Start Server on 0.0.0.0 for Render or other cloud platforms
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server is running on Port ${PORT}!`);
-});
-
-app.listen(port, '0.0.0.0', () => {
-  console.log(`Server is running on port ${port}`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server is running on port ${PORT}`);
 });
