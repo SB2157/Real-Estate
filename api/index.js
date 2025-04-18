@@ -62,8 +62,12 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Start Server (bind to 0.0.0.0 for Render)
+// Start Server
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, () => {
   console.log(`Server is running on Port ${PORT}!`);
+});
+
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server is running on port ${port}`);
 });
